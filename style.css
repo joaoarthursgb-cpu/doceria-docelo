@@ -1,0 +1,663 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --creme: #FAF0DF;
+    --cafe: #68432E;
+    --caramelo: #A66E43;
+    --baunilha: #EAD4B5;
+
+    --largura-conteudo: 1150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--creme);
+    color: var(--cafe);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    width: 100%;
+    padding: 20px 5% 25px;
+    background-color: var(--creme);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: clamp(220px, 35vw, 390px);
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 35px;
+}
+
+.menu a {
+    color: var(--cafe);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 7px 3px;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--caramelo);
+}
+
+
+/* ========================================
+   APRESENTAÇÃO
+======================================== */
+
+.inicio {
+    min-height: 490px;
+    padding: 90px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    background-color: var(--baunilha);
+}
+
+.conteudo-inicio {
+    max-width: 750px;
+}
+
+.subtitulo {
+    display: block;
+    margin-bottom: 18px;
+
+    color: var(--caramelo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.conteudo-inicio h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.12;
+    font-weight: 500;
+
+    color: var(--cafe);
+    margin-bottom: 22px;
+}
+
+.conteudo-inicio p {
+    max-width: 570px;
+    margin: 0 auto 30px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--cafe);
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botao {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 5px;
+
+    background-color: var(--cafe);
+    color: var(--creme);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+    background-color: var(--caramelo);
+}
+
+.botao-claro {
+    background-color: var(--creme);
+    color: var(--cafe);
+}
+
+.botao-claro:hover {
+    background-color: var(--baunilha);
+    color: var(--cafe);
+}
+
+
+/* ========================================
+   INTRODUÇÃO / BOAS-VINDAS
+======================================== */
+
+.boas-vindas {
+    max-width: 850px;
+    margin: auto;
+    padding: 85px 25px;
+    text-align: center;
+}
+
+.detalhe {
+    display: block;
+    margin-bottom: 15px;
+
+    font-size: 35px;
+    color: var(--caramelo);
+}
+
+.boas-vindas h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 4vw, 39px);
+    font-weight: 500;
+
+    margin-bottom: 20px;
+    color: var(--cafe);
+}
+
+.boas-vindas p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--cafe);
+}
+
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-secao > span,
+.conteudo-promocoes > span {
+    color: var(--caramelo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.titulo-secao h2 {
+    margin: 14px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(29px, 4vw, 42px);
+    font-weight: 500;
+
+    color: var(--cafe);
+}
+
+.titulo-secao p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   CATÁLOGO DE DOCES
+======================================== */
+
+.secao-doces {
+    width: 100%;
+    padding: 75px 5%;
+    background-color: var(--creme);
+}
+
+/* CARROSSEL HORIZONTAL */
+
+.container-produtos {
+    width: 100%;
+    max-width: var(--largura-conteudo);
+    margin: auto;
+
+    display: flex;
+    gap: 30px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 10px 5px 20px;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--caramelo) var(--baunilha);
+}
+
+/* CARTÕES DOS DOCES */
+
+.card-produto {
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: 280px;
+
+    scroll-snap-align: start;
+
+    overflow: hidden;
+
+    background-color: var(--baunilha);
+    border: 1px solid rgba(104, 67, 46, 0.10);
+    border-radius: 15px;
+
+    transition: transform 0.2s ease;
+}
+
+.card-produto:hover {
+    transform: translateY(-4px);
+}
+
+.imagem-produto {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--baunilha);
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.info-produto {
+    padding: 25px 24px;
+    text-align: center;
+    background-color: var(--baunilha);
+}
+
+.info-produto h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 2.5vw, 24px);
+    line-height: 1.3;
+
+    margin-bottom: 10px;
+    color: var(--cafe);
+}
+
+.info-produto p {
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+    color: var(--cafe);
+}
+
+.precos-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.preco {
+    display: inline-block;
+    color: var(--caramelo);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.preco-secundario {
+    display: inline-block;
+    color: var(--cafe);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   SOBRE NÓS / NOSSA HISTÓRIA
+======================================== */
+
+.sobre {
+    padding: 90px 7%;
+    background-color: var(--baunilha);
+}
+
+.conteudo-sobre {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.conteudo-sobre h2 {
+    margin-bottom: 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--cafe);
+}
+
+.conteudo-sobre p {
+    margin-bottom: 16px;
+
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--cafe);
+}
+
+.assinatura {
+    display: block;
+    margin-top: 28px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-style: italic;
+
+    color: var(--caramelo);
+}
+
+
+/* ========================================
+   PROMOÇÕES
+======================================== */
+
+.promocoes {
+    width: 100%;
+    padding: 85px 7%;
+
+    background-color: var(--cafe);
+    text-align: center;
+}
+
+.conteudo-promocoes {
+    max-width: 720px;
+    margin: auto;
+}
+
+.conteudo-promocoes > span {
+    color: var(--baunilha);
+}
+
+.conteudo-promocoes h2 {
+    margin: 18px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 4.5vw, 45px);
+    line-height: 1.2;
+    font-weight: 500;
+
+    color: var(--creme);
+}
+
+.conteudo-promocoes p {
+    margin-bottom: 18px;
+
+    color: var(--creme);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.preco-combo {
+    margin: 12px 0 28px;
+
+    color: var(--baunilha);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(35px, 5vw, 48px);
+    font-weight: 700;
+}
+
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contato {
+    padding: 90px 7%;
+    text-align: center;
+    background-color: var(--creme);
+}
+
+.contato h2 {
+    margin-bottom: 18px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 500;
+}
+
+.contato p {
+    max-width: 570px;
+    margin: 0 auto 28px;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    padding: 35px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    background-color: var(--cafe);
+    color: var(--creme);
+    text-align: center;
+}
+
+.rodape p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.rodape span {
+    font-size: 13px;
+    color: var(--baunilha);
+}
+
+.rodape small {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--baunilha);
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        padding: 18px 4% 22px;
+    }
+
+    .menu {
+        gap: 12px 24px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .inicio {
+        min-height: 420px;
+        padding: 75px 6%;
+    }
+
+    .container-produtos {
+        gap: 20px;
+    }
+
+    .card-produto {
+        flex: 0 0 45%;
+    }
+
+    .info-produto {
+        padding: 22px 16px;
+    }
+
+    .preco-secundario {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        padding: 15px 15px 20px;
+        gap: 16px;
+    }
+
+    .logo img {
+        width: clamp(200px, 65vw, 300px);
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 8px 12px;
+        max-width: 380px;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        padding: 9px 5px;
+    }
+
+    .inicio {
+        min-height: 390px;
+        padding: 65px 22px;
+    }
+
+    .conteudo-inicio h1 {
+        font-size: clamp(35px, 10vw, 48px);
+    }
+
+    .conteudo-inicio p {
+        font-size: 14px;
+    }
+
+    .boas-vindas {
+        padding: 65px 25px;
+    }
+
+    .secao-doces {
+        padding: 60px 6%;
+    }
+
+    .container-produtos {
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .card-produto {
+        flex: 0 0 85%;
+        min-width: 250px;
+    }
+
+    .imagem-produto {
+        aspect-ratio: 4 / 3;
+    }
+
+    .info-produto {
+        padding: 23px 20px;
+    }
+
+    .promocoes,
+    .sobre,
+    .contato {
+        padding: 70px 25px;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .menu {
+        gap: 6px 8px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .inicio {
+        padding: 55px 18px;
+    }
+
+    .botao {
+        padding: 13px 20px;
+        font-size: 12px;
+    }
+
+    .info-produto {
+        padding: 20px 15px;
+    }
+
+    .preco-secundario {
+        font-size: 11px;
+    }
+
+}
